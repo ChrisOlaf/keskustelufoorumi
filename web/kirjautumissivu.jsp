@@ -15,9 +15,13 @@
             <h5>Salasana</h5><input type="text" name="salasana" required>
             <br>
             <br>
-            <br>
             <input type="submit" value="Sisään">
         </fieldset>
     </form>
+
+    <%String kayttis = "";
+    String salasana = "";
+
+       %>
 </body>
 </html>
