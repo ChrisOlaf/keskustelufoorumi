@@ -4,32 +4,44 @@
 <html>
 <head>
     <title>Etusivu</title>
+    <link rel="stylesheet" type="text/css" href="style/foorumi.css">
 </head>
 <body>
     <div id="banneri">
         <h1>FOORUMI</h1>
     </div>
-
+    <br>
+    <br>
     <div>
         <nav id="navi">
-            <a href="1.jsp">Aihe 1</a>
-            <a href="2.jsp">Aihe 2</a>
-            <a href="3.jsp">Aihe 3</a>
-            <a href="4.jsp">Aihe 4</a>
-            <a href="5.jsp">Aihe 5</a>
+            <a href="Aihealue.jsp">Netflix-sarjat</a>
+            <a href="Aihealue.jsp">HBO-fanit</a>
+            <a href="Aihealue.jsp">Julkkisjuorut</a>
+            <a href="Aihealue.jsp">Viiniarvostelut</a>
+            <a href="Aihealue.jsp">Munchies</a>
         </nav>
     </div>
-
-    <div>
-        <h3>Uusimmat viestit keskustelualueille</h3>
-        <table>
-            <tr><th>Keskustelu 1</th></tr>
-            <tr><td>Keskustelu 2</td></tr>
-            <tr><td>Keskustelu 3</td></tr>
+    <br>
+    <br>
+    <div id="fiidi">
+        <table border="4">
+            <tr>
+                <th colspan="3"><h2>Uusimmat viestit</h2></th>
+            </tr>
+            <tr>
+                <th>Otsikko</th><th>Viestin alku</th><th>Kirjoittaja</th>
+            </tr>
+            <tr>
+                <td>Keskustelu 1</td><td>Olen sitä mieltä, että</td><td>Maikki</td>
+            </tr>
+            <tr>
+                <td>Keskustelu 1</td><td>Olen sitä mieltä, että</td><td>Pirre</td>
+            </tr>
         </table>
     </div>
-
-    <div>
+    <br>
+    <br>
+    <div id="lomake">
     <h3>Kirjaudu sisään</h3>
     <form method="post";>
         <fieldset>

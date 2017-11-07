@@ -19,9 +19,5 @@
         </fieldset>
     </form>
 
-    <%String kayttis = "";
-    String salasana = "";
-
-       %>
 </body>
 </html>

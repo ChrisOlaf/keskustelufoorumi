@@ -1,0 +1,47 @@
+
+
+body {
+    background-image: url("https://static.pexels.com/photos/131634/pexels-photo-131634.jpeg");
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: 'Dosis', sans-serif;
+}
+
+div {
+    background-color: rgba(255, 245, 238, 0.7);
+    position: relative;
+    align-content: center;
+    border-radius: 20px;
+    padding: 5px;
+    margin: auto;
+    width: 50%;
+    text-align: center;
+
+}
+
+div#fiidi {
+    align-content: center;
+    text-align: center;
+}
+
+div#lomake {
+    width: 35%;
+}
+
+div#banneri {
+    align-content: center;
+    text-align: center;
+}
+
+div#navi {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    background-color: whitesmoke;
+    letter-spacing: 5px;
+    text-align: center;
+    background-color: rgba(255, 245, 238, 0.7);
+    border-radius: 5%;
+    margin-top: 1%;
+}
