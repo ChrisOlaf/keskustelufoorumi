@@ -23,7 +23,7 @@
     <div>
         <h3>Uusimmat viestit keskustelualueille</h3>
         <table>
-            <tr><td>Keskustelu 1</td></tr>
+            <tr><th>Keskustelu 1</th></tr>
             <tr><td>Keskustelu 2</td></tr>
             <tr><td>Keskustelu 3</td></tr>
         </table>
