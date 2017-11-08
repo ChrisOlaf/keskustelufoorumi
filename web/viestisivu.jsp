@@ -36,7 +36,24 @@
         </tr>
     </table>
 </c:forEach>
-
+<table>
+    <tr>
+        <td>
+            <form action="UusiViestiServlet" method="post">
+                <fieldset>
+                    <legend>Kirjoita uusi viesti:</legend>
+                    <input type="text" name="uusiviesti" placeholder="Please enter your message here" required="Please enter your message here"/>
+                    <br/>
+                    Olen vain ihminen: <input type="checkbox" name="rasti" required="Please confirm that you are only a human"/>
+                    <input type="hidden" name="viestiid" value="${viesti.viestiid}"/>
+                    <input type="hidden" name="alueid" value="${viesti.alueid}"/>
+                    <br/>
+                    <button type="submit">Lähetä</button>
+                </fieldset>
+            </form>
+        </td>
+    </tr>
+</table>
 
 </body>
 </html>
