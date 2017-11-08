@@ -15,15 +15,31 @@
     <link rel="stylesheet" type="text/css" href="style/foorumi.css">
 </head>
 <body>
-<div>
-<a href="index.jsp">Etusivu</a>
-<a href="LogoutServlet">Kirjaudu ulos</a>
+<div id="banneri">
+<h1><%= session.getAttribute("knimi")%></h1>
 </div>
 <div>
-<h1><%= session.getAttribute("knimi")%>n profiilisivu!</h1>
+    <a href="index.jsp">Etusivu</a>
+    <a href="LogoutServlet">Kirjaudu ulos</a>
 </div>
-<div>
 
+<div>
+<h2> </h2>
+</div>
+    <div id="fiidi">
+        <table border="1">
+            <tr>
+                <th colspan="4"><h2>Aloittamasi keskustelut</h2></th>
+            </tr>
+            <tr>
+                <th>Otsikko</th><th>Viesti</th><th>Kirjoitettu</th>
+            </tr>
+            <c:forEach var="msg" items="${sessionScope.kayttajanviestit}">
+                <tr>
+                    <td><a href="viesti?value=${msg.viestiID}" value="viestiID" action="viesti" method="post">${msg.otsikko}</a></td><td>${msg.viesti}</td><td>${msg.ajankohta}</td>
+                </tr>
+            </c:forEach>
+        </table>
 </div>
 </body>
 </html>

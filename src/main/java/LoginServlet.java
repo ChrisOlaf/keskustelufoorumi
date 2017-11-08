@@ -1,3 +1,5 @@
+import fi.academy.papu.Viesti;
+
 import javax.annotation.Resource;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -13,6 +15,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 @WebServlet(name = "LoginServlet", urlPatterns = {"/LoginServlet"})
 public class LoginServlet extends HttpServlet {
@@ -30,6 +34,7 @@ public class LoginServlet extends HttpServlet {
             out.print("Tervetuloa, " + knimi + "!");
             HttpSession session = request.getSession();
             session.setAttribute("knimi", knimi);
+            session.setAttribute("kayttajanviestit", kayttajanViestit(knimi));
             request.getRequestDispatcher("index.jsp").include(request, response);
 
         }else{
@@ -62,5 +67,31 @@ public class LoginServlet extends HttpServlet {
         }
 
         return status;
+    }
+
+    public List<Viesti> kayttajanViestit(String knimi) {
+        List<Viesti> viestit = new ArrayList<>();
+
+        try (Connection con = ds.getConnection()) {
+            String sql = ("SELECT * FROM viesti JOIN henkilo ON viesti.kirjoittaja = henkilo.hloid " +
+                    "JOIN alue on viesti.alueid = alue.alueid " +
+                    "WHERE henkilo.nimimerkki = ?");
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setString(1, knimi);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                Viesti v = new Viesti();
+                v.setViestiID(rs.getInt("id"));
+                v.setOtsikko(rs.getString("otsikko"));
+                v.setViesti(rs.getString("viesti"));
+                v.setAjankohta(rs.getString("kirjoitettu"));
+                v.setAlueID(rs.getInt("alueid"));
+                v.setNimimerkki(rs.getString("nimimerkki"));
+                viestit.add(v);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return viestit;
     }
 }
