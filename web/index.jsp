@@ -23,7 +23,6 @@
 <%--väliaikaiset linkit eri sivuille--%>
 <a href="Aihealue.jsp">Aihealueelle</a>
 <a href="viestisivu.jsp">Yksittäisen keskustelun sivulle</a>
-<a href="kirjautumissivu.jsp">Kirjautumissivulle</a>
 <div id="kolumnit">
     <div id="aihealueet">
         <h3>Keskustelualueet</h3>
@@ -48,11 +47,11 @@
     </div>
 </div>
 <div id="lomake">
-    <form method="post";>
+    <form action="LoginServlet" method="post";>
         <fieldset>
             <legend>Kirjaudu sisään</legend>
             <h5>Käyttäjätunnus</h5><input type="text" name="kayttis" required>
-            <h5>Salasana</h5><input type="text" name="salasana" required>
+            <h5>Salasana</h5><input type="password" name="salasana" required>
             <br>
             <input type="submit" value="Sisään">
         </fieldset>
