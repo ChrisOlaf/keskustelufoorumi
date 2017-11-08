@@ -22,7 +22,6 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
-        request.getRequestDispatcher("link.html").include(request, response);
 
         String knimi = request.getParameter("kayttajanimi");
         String salasana = request.getParameter("salasana");
@@ -32,7 +31,7 @@ public class LoginServlet extends HttpServlet {
             HttpSession session = request.getSession();
             session.setAttribute("knimi", knimi);
             request.getRequestDispatcher("index.jsp").include(request, response);
-           // rd.forward(request, response);
+
         }else{
             out.print("Väärä käyttäjänimi tai salasana!");
             request.getRequestDispatcher("index.jsp").include(request, response);

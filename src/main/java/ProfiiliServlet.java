@@ -16,12 +16,9 @@ public class ProfiiliServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
         PrintWriter out=response.getWriter();
-        request.getRequestDispatcher("link.html").include(request, response);
 
         HttpSession session=request.getSession(false);
         if(session.getAttribute("knimi")!=null){
-            String knimi =(String)session.getAttribute("knimi");
-            out.print(knimi + "n profiili!");
             request.getRequestDispatcher("profiilisivu.jsp").include(request, response);
         }
         else{
