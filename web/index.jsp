@@ -32,7 +32,7 @@
         <div id="aihealueet">
             <h3>Keskustelualueet</h3>
             <c:forEach var="row" items="${alue.rows}">
-                <a href="Aihealue.jsp">${row.nimi}</a><br><br>
+                <a href="Keskustelut">${row.nimi}</a><br><br>
             </c:forEach>
         </div>
         <div id="fiidi">
