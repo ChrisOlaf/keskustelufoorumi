@@ -10,8 +10,9 @@
 </sql:query>
 
 <sql:query var="uusimmat" dataSource="jdbc/FoorumiDB">
-    SELECT viesti.otsikko AS otsikko, henkilo.nimi AS kirjoittaja, alue.nimi AS aihe, viesti.viesti AS viesti
-    FROM viesti JOIN henkilo ON viesti.kirjoittaja=henkilo.hloid JOIN alue ON alue.alueid=viesti.alueid LIMIT 5
+    SELECT viesti.otsikko, henkilo.nimimerkki, alue.nimi, viesti.viesti
+    FROM viesti JOIN henkilo ON viesti.kirjoittaja=henkilo.hloid
+    JOIN alue ON alue.alueid=viesti.alueid ORDER BY viesti.kirjoitettu DESC LIMIT 5
 </sql:query>
 
 <html>
@@ -23,6 +24,10 @@
     <div id="banneri">
         <h1>FOORUMI</h1>
     </div>
+    <%--väliaikaiset linkit eri sivuille--%>
+    <a href="Aihealue.jsp">Aihealueelle</a>
+    <a href="viestisivu.jsp">Yksittäisen keskustelun sivulle</a>
+    <a href="kirjautumissivu.jsp">Kirjautumissivulle</a>
     <div id="kolumnit">
         <div id="aihealueet">
             <h3>Keskustelualueet</h3>
@@ -40,7 +45,7 @@
                 </tr>
                 <c:forEach var="row" items="${uusimmat.rows}">
                 <tr>
-                    <td>${row.otsikko}</td><td>${row.viesti}</td><td>${row.kirjoittaja}</td><td>${row.aihe}</td>
+                    <td>${row.otsikko}</td><td>${row.viesti}</td><td>${row.nimimerkki}</td><td>${row.nimi}</td>
                 </tr>
                 </c:forEach>
             </table>
