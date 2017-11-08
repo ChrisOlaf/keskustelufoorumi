@@ -25,7 +25,7 @@ public class ViestiServlet extends HttpServlet {
         HttpSession istunto = request.getSession(true);
         Viesti viesti = new Viesti();
         Integer viestiID = Integer.getInteger(request.getParameter("viestiID"));
-//        viestiID = 1;
+        viestiID = 1;
         if (viestiID == null) {
             request.getRequestDispatcher("index.jsp").forward(request,response);
         }
@@ -39,11 +39,6 @@ public class ViestiServlet extends HttpServlet {
                 return;
             }
         }
-        istunto.setAttribute("Viesti", viesti);
         request.getRequestDispatcher("viestisivu.jsp").forward(request, response);
     }
-
-//    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        doPost(request, response);
-//    }
 }

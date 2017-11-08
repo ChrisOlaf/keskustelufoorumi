@@ -26,7 +26,7 @@
 <table border="2">
     <tr><th>Otsikko</th><th>Nimimerkki</th><th>Kirjoitettu</th> </tr>
 <c:forEach var="viesti" items="${sessionScope.viestiLista}">
-    <tr><td><a href="index.jsp"><c:out value="${viesti.otsikko}" /></a></td><td><c:out value="${viesti.nimimerkki}" /></td>
+    <tr><td><a href="viesti?value=${viesti.viestiid}"><c:out value="${viesti.otsikko}" /></a></td><td><c:out value="${viesti.nimimerkki}" /></td>
         <td><c:out value="${viesti.kirjoitettu}"/></td></tr>
 </c:forEach>
 </table>

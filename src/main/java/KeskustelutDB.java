@@ -7,7 +7,7 @@ import java.util.List;
 
 public class KeskustelutDB {
     public static List<Viestit> viestiListaus(Connection con, int aluenro) throws SQLException {
-        String sql = "select * from viesti join henkilo on viesti.kirjoittaja = henkilo.hloid where alueid = ? AND vastaus = NULL ";
+        String sql = "select * from viesti join henkilo on viesti.kirjoittaja = henkilo.hloid where alueid = ? AND vastaus IS NULL";
         PreparedStatement ps = con.prepareStatement(sql);
         ps.setInt(1, aluenro);
         ResultSet rs = ps.executeQuery();
