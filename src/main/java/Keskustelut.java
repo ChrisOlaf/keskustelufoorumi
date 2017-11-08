@@ -23,6 +23,7 @@ public class Keskustelut extends HttpServlet {
         Viestit viestit = new Viestit();
         try (Connection con = ds.getConnection()) {
             istunto.setAttribute("viestiLista", KeskustelutDB.viestiListaus(con, aluenro));
+
         } catch (SQLException e) {
             e.printStackTrace();
             istunto.setAttribute("virheviesti", e.getMessage());

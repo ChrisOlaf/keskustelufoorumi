@@ -19,8 +19,10 @@
             text-align: center;
         }
     </style>
+    <link rel="stylesheet" type="text/css" href="style/foorumi.css">
 </head>
 <body>
+<h1 style="text-align: center"><b>Otsikko</b></h1>
 <table border="2">
     <tr><th>Otsikko</th><th>Nimimerkki</th><th>Kirjoitettu</th> </tr>
 <c:forEach var="viesti" items="${sessionScope.viestiLista}">

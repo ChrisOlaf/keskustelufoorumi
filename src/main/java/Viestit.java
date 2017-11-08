@@ -4,11 +4,13 @@ public class Viestit {
     private String otsikko;
     private String nimimerkki;
     private Date kirjoitettu;
+    private int viestiid;
 
     public Viestit() {
         this.otsikko = otsikko;
         this.nimimerkki = nimimerkki;
         this.kirjoitettu = kirjoitettu;
+        this.viestiid = viestiid;
     }
 
     public String getOtsikko() {
@@ -33,5 +35,13 @@ public class Viestit {
 
     public void setKirjoitettu(Date kirjoitettu) {
         this.kirjoitettu = kirjoitettu;
+    }
+
+    public int getViestiid() {
+        return viestiid;
+    }
+
+    public void setViestiid(int viestiid) {
+        this.viestiid = viestiid;
     }
 }
