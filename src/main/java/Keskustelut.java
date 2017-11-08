@@ -21,16 +21,18 @@ public class Keskustelut extends HttpServlet {
         response.setContentType("text/html");
         HttpSession istunto = request.getSession(true);
         Viestit viestit = new Viestit();
+        Aiheet aiheet = new Aiheet();
         try (Connection con = ds.getConnection()) {
             istunto.setAttribute("viestiLista", KeskustelutDB.viestiListaus(con, aluenro));
-
+            istunto.setAttribute("otsikkoLista",KeskustelutDB.aiheetListaus(con,aluenro));
         } catch (SQLException e) {
             e.printStackTrace();
             istunto.setAttribute("virheviesti", e.getMessage());
-            RequestDispatcher disp = request.getRequestDispatcher("index.jsp");
+            RequestDispatcher disp = request.getRequestDispatcher("virhe.jsp");
             disp.forward(request, response);
             return;
         }
+        istunto.setAttribute("aiheet",aiheet);
         istunto.setAttribute("viestit",viestit );
         RequestDispatcher disp = request.getRequestDispatcher("Aihealue.jsp");
         disp.forward(request, response);

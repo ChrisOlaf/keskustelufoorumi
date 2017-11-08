@@ -33,12 +33,4 @@ public class Aiheet {
         this.alueid = alueid;
     }
 
-    @Override
-    public String toString() {
-        return "Aiheet{" +
-                "nimi='" + nimi + '\'' +
-                ", kuvaus='" + kuvaus + '\'' +
-                ", alueid=" + alueid +
-                '}';
-    }
 }
