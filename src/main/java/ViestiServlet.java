@@ -17,43 +17,33 @@ import java.sql.SQLException;
 @WebServlet(name = "ViestiServlet", urlPatterns = "/viesti")
 public class ViestiServlet extends HttpServlet {
 
-    @Resource(name = "jdbc/foorumiDB")
+    @Resource(name = "jdbc/FoorumiDB")
     DataSource ds;
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         HttpSession istunto = request.getSession(true);
-        ViestiDBO lista = new ViestiDBO();
+        Viesti viesti = new Viesti();
         Integer viestiID = Integer.getInteger(request.getParameter("viestiID"));
-        viestiID = 1;
-        if (viestiID != null) {
+//        viestiID = 1;
+        if (viestiID == null) {
+            request.getRequestDispatcher("index.jsp").forward(request,response);
+        }
+        else if (viestiID != null) {
             try (Connection con = ds.getConnection()) {
-                ViestiDBO.viestiListaus(con, viestiID);
-                istunto.setAttribute("viestiLista", lista);
-                request.getRequestDispatcher("viestisivu.jsp").forward(request, response);
-            }
-            catch (SQLException e) {
+                istunto.setAttribute("viestiLista", ViestiDBO.viestiListaus(con, viestiID));
+            } catch (SQLException e) {
                 e.printStackTrace();
                 istunto.setAttribute("virheviesti", e.getMessage());
-                RequestDispatcher disp = request.getRequestDispatcher("virhesivu.jsp");
-                disp.forward(request, response);
+                request.getRequestDispatcher("virhe.jsp").forward(request, response);
                 return;
             }
         }
+        istunto.setAttribute("Viesti", viesti);
+        request.getRequestDispatcher("viestisivu.jsp").forward(request, response);
     }
 
-//    public class HenkiloServlet extends HttpServlet {
-//        HenkiloLista lista = new HenkiloLista();
-//
-//        protected void doGet (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//            request.setAttribute("uusiNimi", lista);
-//            request.getRequestDispatcher("hlolista.jsp").
-//                    forward(request, response);
-//        }
-//    }
-
-//
 //    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//
+//        doPost(request, response);
 //    }
 }

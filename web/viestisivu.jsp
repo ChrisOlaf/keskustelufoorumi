@@ -16,26 +16,26 @@
 <body>
 <h3>Tällä sivulla on yksittäinen viesti + vastaukset</h3>
 
-<c:forEach var="row" items="${requestScope.viestiLista.viestiListaus}">
+<c:forEach var="msg" items="${sessionScope.viestiLista}">
     <table>
         <tr>
             <td>
-                Otsikko ${row.otsikko}
+                Otsikko ${msg.otsikko}
             </td>
         </tr>
         <tr>
             <td>
-                Kirjoittaja ${row.nimimerkki}
+                Kirjoittaja ${msg.nimimerkki}
             </td>
         </tr>
         <tr>
             <td>
-                Aika ${row.ajankohta}
+                Aika ${msg.ajankohta}
             </td>
         </tr>
         <tr>
             <td>
-                Viesti ${row.viesti}
+                Viesti ${msg.viesti}
             </td>
         </tr>
     </table>
