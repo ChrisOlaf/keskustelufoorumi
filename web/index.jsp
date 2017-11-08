@@ -23,11 +23,12 @@
 <%--väliaikaiset linkit eri sivuille--%>
 <a href="Aihealue.jsp">Aihealueelle</a>
 <a href="viestisivu.jsp">Yksittäisen keskustelun sivulle</a>
+<a href="LogoutServlet">Kirjaudu ulos</a>
 <div id="kolumnit">
     <div id="aihealueet">
         <h3>Keskustelualueet</h3>
         <c:forEach var="row" items="${alue.rows}">
-            <a href="Keskustelut?value=${row.alueid}" method="post">${row.nimi}</a><br><br>
+            <a href="TestiServlet?value=${row.alueid}" method="post">${row.nimi}</a><br><br>
         </c:forEach>
     </div>
     <div id="fiidi">
