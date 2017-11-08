@@ -24,6 +24,7 @@
 <a href="Aihealue.jsp">Aihealueelle</a>
 <a href="viestisivu.jsp">Yksittäisen keskustelun sivulle</a>
 <a href="LogoutServlet">Kirjaudu ulos</a>
+<a href="ProfiiliServlet">Profiili</a>
 <div id="kolumnit">
     <div id="aihealueet">
         <h3>Keskustelualueet</h3>
