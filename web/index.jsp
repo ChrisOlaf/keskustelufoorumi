@@ -28,7 +28,7 @@
     <div id="aihealueet">
         <h3>Keskustelualueet</h3>
         <c:forEach var="row" items="${alue.rows}">
-            <a href="Aihealue.jsp?value=${row.alueid}" method="post">${row.nimi}</a><br><br>
+            <a href="Keskustelut?value=${row.alueid}" method="post">${row.nimi}</a><br><br>
         </c:forEach>
     </div>
     <div id="fiidi">
@@ -41,7 +41,7 @@
             </tr>
             <c:forEach var="row" items="${uusimmat.rows}">
                 <tr>
-                    <td><a href="viestisivu.jsp?value=${row.id}" method="post">${row.otsikko}</a></td><td>${row.viesti}</td><td>${row.nimimerkki}</td><td>${row.nimi}</td>
+                    <td><a href="viesti?value=${row.id}" method="post">${row.otsikko}</a></td><td>${row.viesti}</td><td>${row.nimimerkki}</td><td>${row.nimi}</td>
                 </tr>
             </c:forEach>
         </table>
