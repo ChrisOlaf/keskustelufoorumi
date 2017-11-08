@@ -63,6 +63,17 @@ table {
     padding-top: 5%;
 }
 
+#haku {
+    background-color: rgba(255, 245, 238, 0.7);
+    font-family: "Myanmar Text", sans-serif;
+    width: 30%;
+    border-radius: 2%;
+    margin-bottom: 5%;
+    margin-left: 3%;
+    margin-top: 3%;
+    padding: 2%;
+}
+
 #lomake {
     background-color: rgba(255, 245, 238, 0.7);
     font-family: "Myanmar Text", sans-serif;
