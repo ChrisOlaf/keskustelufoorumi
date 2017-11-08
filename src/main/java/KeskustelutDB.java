@@ -6,10 +6,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class KeskustelutDB {
-    public static List<Viestit> viestiListaus(Connection con) throws SQLException {
-        String sql = "select * from viesti join henkilo on viesti.kirjoittaja = henkilo.hloid where alueid = 1";
+    public static List<Viestit> viestiListaus(Connection con, int aluenro) throws SQLException {
+        String sql = "select * from viesti join henkilo on viesti.kirjoittaja = henkilo.hloid where alueid = ?";
         PreparedStatement ps = con.prepareStatement(sql);
-
+        ps.setInt(1, aluenro);
         ResultSet rs = ps.executeQuery();
         List<Viestit> viestit = new ArrayList<>();
         while (rs.next()) {

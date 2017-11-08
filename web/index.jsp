@@ -28,7 +28,7 @@
     <div id="aihealueet">
         <h3>Keskustelualueet</h3>
         <c:forEach var="row" items="${alue.rows}">
-            <a href="TestiServlet?value=${row.alueid}" method="post">${row.nimi}</a><br><br>
+            <a href="Keskustelut?value=${row.alueid}" value="nro" action="Keskustelut" method="post">${row.nimi}</a><br><br>
         </c:forEach>
     </div>
     <div id="fiidi">

@@ -17,11 +17,12 @@ public class Keskustelut extends HttpServlet {
     DataSource ds;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        int aluenro = Integer.parseInt(request.getParameter("value"));
         response.setContentType("text/html");
         HttpSession istunto = request.getSession(true);
         Viestit viestit = new Viestit();
         try (Connection con = ds.getConnection()) {
-            istunto.setAttribute("viestiLista", KeskustelutDB.viestiListaus(con));
+            istunto.setAttribute("viestiLista", KeskustelutDB.viestiListaus(con, aluenro));
         } catch (SQLException e) {
             e.printStackTrace();
             istunto.setAttribute("virheviesti", e.getMessage());
@@ -40,4 +41,3 @@ public class Keskustelut extends HttpServlet {
     }
 
 }
-
