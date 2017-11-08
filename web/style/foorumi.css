@@ -1,47 +1,82 @@
 
-
 body {
-    background-image: url("https://static.pexels.com/photos/131634/pexels-photo-131634.jpeg");
+    font-family: "Myanmar Text", sans-serif;
+    background-image: url("https://static.pexels.com/photos/479453/pexels-photo-479453.jpeg");
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
-    font-family: 'Dosis', sans-serif;
+    background-repeat: no-repeat;
+    border-width: 2px;
+    border-style: dotted;
+    border-color: darkslategray;
+    border-radius: 1%;
 }
 
-div {
-    background-color: rgba(255, 245, 238, 0.7);
-    position: relative;
-    align-content: center;
-    border-radius: 20px;
-    padding: 5px;
-    margin: auto;
-    width: 50%;
-    text-align: center;
-
-}
-
-div#fiidi {
-    align-content: center;
-    text-align: center;
-}
-
-div#lomake {
-    width: 35%;
-}
-
-div#banneri {
-    align-content: center;
-    text-align: center;
-}
-
-div#navi {
-    position: fixed;
+#banneri {
+    font-family: "Myanmar Text", sans-serif;
     width: 100%;
-    left: 0;
-    background-color: whitesmoke;
-    letter-spacing: 5px;
+    height: 120px;
+    text-align: center;
+    color: white;
+    font-size: 25px;
+    letter-spacing: 7px;
+    background-color: darkslategray;
+}
+
+#kolumnit {
+    display: flex;
+    box-sizing: border-box;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-right: 15%;
+    padding-left: 15%;
+    margin: auto;
+}
+
+#aihealueet {
+    letter-spacing: 2px;
     text-align: center;
     background-color: rgba(255, 245, 238, 0.7);
-    border-radius: 5%;
-    margin-top: 1%;
+    order: 1;
+    overflow: hidden;
+    margin-left: 5%;
+    border-radius: 2%;
+    padding-bottom: 3%;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 3%;
+    margin-right: 5%;
 }
+
+#fiidi {
+    order: 2;
+    overflow: hidden;
+}
+
+table {
+    background-color: rgba(255, 245, 238, 0.7);
+    border-radius: 2%;
+    text-align: center;
+    padding-bottom: 5%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 5%;
+}
+
+#lomake {
+    background-color: rgba(255, 245, 238, 0.7);
+    font-family: "Myanmar Text", sans-serif;
+    width: 30%;
+    border-radius: 2%;
+    margin-bottom: 5%;
+    margin-left: 3%;
+    margin-top: 3%;
+    padding: 2%;
+}
+
+th, td {
+    padding: 10px;
+    margin: 10px;
+}
+
+
