@@ -20,16 +20,10 @@ public class ViestiServlet extends HttpServlet {
     @Resource(name = "jdbc/FoorumiDB")
     DataSource ds;
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession istunto = request.getSession(true);
-        Viesti viesti = new Viesti();
-        Integer viestiID = Integer.getInteger(request.getParameter("viestiID"));
-        viestiID = 1;
-        if (viestiID == null) {
-            request.getRequestDispatcher("index.jsp").forward(request,response);
-        }
-        else if (viestiID != null) {
+        Integer viestiID = Integer.parseInt(request.getParameter("value"));
+        if (viestiID != null) {
             try (Connection con = ds.getConnection()) {
                 istunto.setAttribute("viestiLista", ViestiDBO.viestiListaus(con, viestiID));
             } catch (SQLException e) {
@@ -39,6 +33,13 @@ public class ViestiServlet extends HttpServlet {
                 return;
             }
         }
+        else if (viestiID == null) {
+            request.getRequestDispatcher("index.jsp").forward(request,response);
+        }
         request.getRequestDispatcher("viestisivu.jsp").forward(request, response);
+    }
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        doPost(request, response);
     }
 }

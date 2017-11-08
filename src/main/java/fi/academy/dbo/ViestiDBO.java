@@ -2,7 +2,6 @@ package fi.academy.dbo;
 
 import fi.academy.papu.Viesti;
 
-import java.io.Serializable;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;

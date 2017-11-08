@@ -1,41 +1,37 @@
 <!DOCTYPE html>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%--<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>--%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page session="true" %>
 
-<%--<sql:query var="rs" dataSource="jdbc/FoorumiDB">--%>
-    <%--select henkilo.nimi, otsikko, kirjoitettu, viesti from viesti join henkilo on viesti.kirjoittaja = henkilo.hloid--%>
-<%--</sql:query>--%>
-
 <html>
 <head>
-    <title>Viestisivu</title>
+    <title>Foorumi - Viestiketju</title>
+    <link rel="stylesheet" type="text/css" href="style/foorumi.css">
 </head>
 <body>
 <h3>Tällä sivulla on yksittäinen viesti + vastaukset</h3>
 
-<c:forEach var="msg" items="${sessionScope.viestiLista}">
+<c:forEach var="viesti" items="${sessionScope.viestiLista}">
     <table>
         <tr>
             <td>
-                Otsikko ${msg.otsikko}
+                Otsikko ${viesti.otsikko}
             </td>
         </tr>
         <tr>
             <td>
-                Kirjoittaja ${msg.nimimerkki}
+                Kirjoittaja ${viesti.nimimerkki}
             </td>
         </tr>
         <tr>
             <td>
-                Aika ${msg.ajankohta}
+                Aika ${viesti.ajankohta}
             </td>
         </tr>
         <tr>
             <td>
-                Viesti ${msg.viesti}
+                Viesti ${viesti.viesti}
             </td>
         </tr>
     </table>
