@@ -18,6 +18,9 @@
             column-width: 350px;
             text-align: center;
         }
+        table {
+            width: 100%;
+        }
     </style>
     <link rel="stylesheet" type="text/css" href="style/foorumi.css">
 </head>
@@ -30,8 +33,8 @@
 <table border="2">
     <tr><th>Otsikko</th><th>Nimimerkki</th><th>Kirjoitettu</th> </tr>
 <c:forEach var="viesti" items="${sessionScope.viestiLista}">
-    <tr><td><a href="viesti?value=${viesti.viestiid}"><c:out value="${viesti.otsikko}" /></a></td><td><c:out value="${viesti.nimimerkki}" /></td>
-        <td><c:out value="${viesti.kirjoitettu}"/></td></tr>
+    <tr><td><a href="viesti?value=${viesti.viestiID}"><c:out value="${viesti.otsikko}" /></a></td><td><c:out value="${viesti.nimimerkki}" /></td>
+        <td><c:out value="${viesti.ajankohta}"/></td></tr>
 </c:forEach>
 </table>
 <%--<c:forEach var="row" items="${rs.rows}">--%>

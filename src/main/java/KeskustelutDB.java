@@ -1,3 +1,5 @@
+import fi.academy.papu.Viesti;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -6,18 +8,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class KeskustelutDB {
-    public static List<Viestit> viestiListaus(Connection con, int aluenro) throws SQLException {
+    public static List<Viesti> viestiListaus(Connection con, int aluenro) throws SQLException {
         String sql = "select * from viesti join henkilo on viesti.kirjoittaja = henkilo.hloid where alueid = ? AND vastaus IS NULL";
         PreparedStatement ps = con.prepareStatement(sql);
         ps.setInt(1, aluenro);
         ResultSet rs = ps.executeQuery();
-        List<Viestit> viestit = new ArrayList<>();
+        List<Viesti> viestit = new ArrayList<>();
         while (rs.next()) {
-            Viestit v = new Viestit();
+            Viesti v = new Viesti();
             v.setOtsikko(rs.getString("otsikko"));
             v.setNimimerkki(rs.getString("nimimerkki"));
-            v.setKirjoitettu(rs.getDate("kirjoitettu"));
-            v.setViestiid(rs.getInt("id"));
+            v.setAjankohta(rs.getString("kirjoitettu"));
+            v.setViestiID(rs.getInt("id"));
+
             viestit.add(v);
         }
         return viestit;

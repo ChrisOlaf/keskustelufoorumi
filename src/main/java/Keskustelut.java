@@ -1,3 +1,5 @@
+import fi.academy.papu.Viesti;
+
 import javax.annotation.Resource;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -20,7 +22,7 @@ public class Keskustelut extends HttpServlet {
         int aluenro = Integer.parseInt(request.getParameter("value"));
         response.setContentType("text/html");
         HttpSession istunto = request.getSession(true);
-        Viestit viestit = new Viestit();
+        Viesti viestit = new Viesti();
         Aiheet aiheet = new Aiheet();
         try (Connection con = ds.getConnection()) {
             istunto.setAttribute("viestiLista", KeskustelutDB.viestiListaus(con, aluenro));
