@@ -57,7 +57,7 @@ public class ViestiDBO{
         } else {
             ps.setInt(5, viesti.getVastausID());
         }
-        ps.execute();
+        ps.executeUpdate();
 //        ResultSet rs = ps.getGeneratedKeys();
 //        if(rs.next()) {
 //            int id = rs.getInt(1);

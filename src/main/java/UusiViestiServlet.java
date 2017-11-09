@@ -26,25 +26,26 @@ public class UusiViestiServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession istunto = request.getSession();
-        String knimi = (String) istunto.getAttribute("knimi");
-        int kirjoittaja = 0;
-
-        try (Connection con = ds.getConnection()) {
-            String sql = ("SELECT hloid FROM henkilo " +
-                    "WHERE henkilo.nimimerkki = ?");
-            PreparedStatement ps = con.prepareStatement(sql);
-            ps.setString(1, knimi);
-            ResultSet rs = ps.executeQuery(sql);
-            kirjoittaja = rs.getInt("hloid");
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+//        String knimi = (String) istunto.getAttribute("knimi");
+//        int kirjoittaja = 0;
+//
+//        try (Connection con = ds.getConnection()) {
+//            String sql = ("SELECT hloid FROM henkilo " +
+//                    "WHERE henkilo.nimimerkki = ?");
+//            PreparedStatement ps = con.prepareStatement(sql);
+//            ps.setString(1, knimi);
+//            ResultSet rs = ps.executeQuery();
+//            kirjoittaja = rs.getInt("hloid");
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
 
         Viesti uusiviesti = new Viesti();
         String otsikko = request.getParameter("uusiotsikko");
         String viesti = request.getParameter("uusiviesti");
         int alueID = Integer.parseInt(request.getParameter("alueid"));
         int viestiID = Integer.parseInt(request.getParameter("viestiid"));
+        int kirjoittaja = Integer.parseInt(request.getParameter("hloid"));
 
         uusiviesti.setOtsikko(otsikko);
         uusiviesti.setViesti(viesti);

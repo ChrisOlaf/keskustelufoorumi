@@ -52,12 +52,13 @@
 <table>
     <tr>
         <td>
-<c:forEach var="viesti0" items="${sessionScope.viesti0}">
-            ${viesti0.viestiID}
-            ${viesti0.alueID}
+
+            <%--${viesti0.viestiID}--%>
+            <%--${viesti0.alueID}--%>
             <form action="uusiviesti" method="post">
                 <fieldset>
                     <legend>Kirjoita uusi viesti:</legend>
+                    <c:forEach var="viesti0" items="${sessionScope.viesti0}">
                     <input type="text" name="uusiotsikko" placeholder="Please enter your topic here"
                            required="Please enter your topic here"/>
                     <br/>
@@ -68,11 +69,14 @@
                                               required="Please confirm that you are only a human"/>
                     <input type="hidden" name="viestiid" value="${viesti0.viestiID}"/>
                     <input type="hidden" name="alueid" value="${viesti0.alueID}"/>
+                    </c:forEach>
+                    <c:forEach var="hloid" items="${sessionScope.henkilotiedot}">
+                        <input type="hidden" name="hloid" value="${hloid.hloid}"/>
+                    </c:forEach>
                     <br/>
                     <button type="submit" id="bottom">Lähetä</button>
                 </fieldset>
             </form>
-</c:forEach>
         </td>
     </tr>
 </table>
