@@ -50,8 +50,8 @@
                                 <textarea id="vitekstikentta" name="uusiviesti" placeholder="Please enter your message here"
                                           required="Please enter your message here"></textarea>
                                 <br/>
-                                Olen vain ihminen: <input type="checkbox" name="rasti"
-                                                          required="Please confirm that you are only a human"/>
+                                <label>Olen vain ihminen: <input type="checkbox" name="rasti"
+                                                                 required="Please confirm that you are only a human"/></label>
                                 <input type="hidden" name="viestiid" value="0"/>
                                 <input type="hidden" name="alueid" value="${viesti0.alueid}"/>
                             </c:forEach>
