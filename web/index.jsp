@@ -7,7 +7,7 @@
     SELECT nimi, alueid FROM alue
 </sql:query>
 <sql:query var="uusimmat" dataSource="jdbc/FoorumiDB">
-    SELECT viesti.otsikko, henkilo.nimimerkki, alue.nimi, viesti.viesti
+    SELECT viesti.otsikko, henkilo.nimimerkki, alue.nimi, viesti.viesti, viesti.id
     FROM viesti JOIN henkilo ON viesti.kirjoittaja=henkilo.hloid
     JOIN alue ON alue.alueid=viesti.alueid ORDER BY viesti.kirjoitettu DESC LIMIT 5
 </sql:query>
@@ -42,7 +42,10 @@
             </tr>
             <c:forEach var="row" items="${uusimmat.rows}">
                 <tr>
-                    <td><a href="viesti?value=${row.id}" method="post">${row.otsikko}</a></td><td>${row.viesti}</td><td>${row.nimimerkki}</td><td>${row.nimi}</td>
+                    <td><a href="viesti?value=${row.id}" method="post">${row.otsikko}</a></td>
+                    <td>${row.viesti}</td>
+                    <td>${row.nimimerkki}</td>
+                    <td>${row.nimi}</td>
                 </tr>
             </c:forEach>
         </table>
