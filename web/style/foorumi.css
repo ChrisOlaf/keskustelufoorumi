@@ -1,88 +1,73 @@
 
 body {
     font-family: "Myanmar Text", sans-serif;
-    background-image: url("https://static.pexels.com/photos/479453/pexels-photo-479453.jpeg");
+    /*background-image: url("https://static.pexels.com/photos/479453/pexels-photo-479453.jpeg");*/
+    background-color: rgb(106,177,135);
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
-    border-width: 2px;
-    border-style: dotted;
-    border-color: darkslategray;
+}
+
+a:link, a:visited {
+    text-decoration: underline;
+    padding-right: 10px;
+    color: black;
+}
+a:hover {
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+
+div {
+    background-color: rgba(244,204,112, 0.7);
     border-radius: 1%;
-}
-
-#banneri {
-    font-family: "Myanmar Text", sans-serif;
-    width: 100%;
-    height: 120px;
-    text-align: center;
-    color: white;
-    font-size: 25px;
-    letter-spacing: 7px;
-    background-color: darkslategray;
-}
-
-#kolumnit {
-    display: flex;
-    box-sizing: border-box;
-    padding-top: 2%;
-    padding-bottom: 2%;
-    padding-right: 15%;
-    padding-left: 15%;
-    margin: auto;
-}
-
-#aihealueet {
-    letter-spacing: 2px;
-    text-align: center;
-    background-color: rgba(255, 245, 238, 0.7);
-    order: 1;
-    overflow: hidden;
-    margin-left: 5%;
-    border-radius: 2%;
     padding-bottom: 3%;
     padding-left: 3%;
     padding-right: 3%;
     padding-top: 3%;
-    margin-right: 5%;
+    text-align: center;
+    margin: 2%;
+}
+
+#banneri {
+    position: relative;
+    height: 100px;
+    text-align: center;
+    color: white;
+    font-size: 25px;
+    letter-spacing: 7px;
+    background-color: rgb(32,148,139);
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+}
+
+#aihealueet {
+    letter-spacing: 2px;
+    float: left;
+    margin-left: 3%;
+    width: 30%;
 }
 
 #fiidi {
-    order: 2;
-    overflow: hidden;
+    float: right;
+    margin-left: 3%;
+    width: 45%;
 }
 
 table {
-    background-color: rgba(255, 245, 238, 0.7);
-    border-radius: 2%;
-    text-align: center;
-    padding-bottom: 5%;
-    padding-left: 5%;
-    padding-right: 5%;
-    padding-top: 5%;
-}
 
-#haku {
-    background-color: rgba(255, 245, 238, 0.7);
-    font-family: "Myanmar Text", sans-serif;
-    width: 30%;
-    border-radius: 2%;
-    margin-bottom: 5%;
-    margin-left: 3%;
-    margin-top: 3%;
-    padding: 2%;
 }
 
 #lomake {
-    background-color: rgba(255, 245, 238, 0.7);
-    font-family: "Myanmar Text", sans-serif;
-    width: 30%;
-    border-radius: 2%;
-    margin-bottom: 5%;
-    margin-left: 3%;
-    margin-top: 3%;
-    padding: 2%;
+    float: left;
+}
+
+#login {
+    color: black;
+    font-size: 12px;
 }
 
 th, td {

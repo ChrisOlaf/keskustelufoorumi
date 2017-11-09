@@ -17,62 +17,62 @@
     <link rel="stylesheet" type="text/css" href="style/foorumi.css">
 </head>
 <body>
+<nav>
+    <form id="login" action="LoginServlet" method="post">
+        <p>Käyttäjätunnus<input type="text" name="kayttajanimi" required> Salasana<input type="password" name="salasana" required> <input type="submit" value="Sisään"></p>
+    </form>
+</nav>
 <div id="banneri">
     <h1>FOORUMI</h1>
+    <h5>Täällä voit keskustella kaikesta hauskasta.</h5>
 </div>
-<%--väliaikaiset linkit eri sivuille--%>
-<a href="Aihealue.jsp">Aihealueelle</a>
-<a href="viestisivu.jsp">Yksittäisen keskustelun sivulle</a>
-<a href="LogoutServlet">Kirjaudu ulos</a>
-<a href="ProfiiliServlet">Profiili</a>
-<div id="kolumnit">
-    <div id="aihealueet">
-        <h3>Keskustelualueet</h3>
-        <c:forEach var="row" items="${alue.rows}">
-            <a href="Keskustelut?value=${row.alueid}" value="nro" action="Keskustelut" method="post">${row.nimi}</a><br><br>
+<br>
+<br>
+<%--<a href="rekisteroityminen.jsp">Rekisteröidy käyttäjäksi</a>--%>
+<%--<a href="LogoutServlet">Kirjaudu ulos</a>--%>
+<%--<a href="ProfiiliServlet">Profiili</a>--%>
+<div id="aihealueet">
+    <h3>Keskustelualueet</h3>
+    <c:forEach var="row" items="${alue.rows}">
+        <a href="Keskustelut?value=${row.alueid}" value="nro" action="Keskustelut" method="post">${row.nimi}</a><br><br>
+    </c:forEach>
+    <form action="HakuServlet" method="post">
+        <fieldset>
+            <legend>Etsi kiinnostavia keskusteluja</legend>
+            <h5>Syötä hakusana</h5><input type="text" name="hakusana" required>
+            <br>
+            <input type="submit" value="Hae">
+        </fieldset>
+    </form>
+</div>
+<div id="fiidi">
+    <table border="1">
+        <tr>
+            <th colspan="4"><h2>Uusimmat viestit</h2></th>
+        </tr>
+        <tr>
+            <th>Otsikko</th><th>Viesti</th><th>Kirjoittaja</th><th>Aihealue</th>
+        </tr>
+        <c:forEach var="row" items="${uusimmat.rows}">
+            <tr>
+                <td><a href="viesti?value=${row.id}" method="post">${row.otsikko}</a></td>
+                <td>${row.viesti}</td>
+                <td>${row.nimimerkki}</td>
+                <td>${row.nimi}</td>
+            </tr>
         </c:forEach>
-    </div>
-    <div id="fiidi">
-        <table border="1">
-            <tr>
-                <th colspan="4"><h2>Uusimmat viestit</h2></th>
-            </tr>
-            <tr>
-                <th>Otsikko</th><th>Viesti</th><th>Kirjoittaja</th><th>Aihealue</th>
-            </tr>
-            <c:forEach var="row" items="${uusimmat.rows}">
-                <tr>
-                    <td><a href="viesti?value=${row.id}" method="post">${row.otsikko}</a></td>
-                    <td>${row.viesti}</td>
-                    <td>${row.nimimerkki}</td>
-                    <td>${row.nimi}</td>
-                </tr>
-            </c:forEach>
-        </table>
-    </div>
+    </table>
 </div>
-<div>
-    <div id="haku">
-        <form action="HakuServlet" method="post">
-            <fieldset>
-                <legend>Hae keskusteluja otsikon perusteella</legend>
-                <h5>Syötä hakusana</h5><input type="text" name="hakusana" required>
-                <br>
-                <input type="submit" value="Hae">
-            </fieldset>
-        </form>
-    </div>
-    <div id="lomake">
-        <form action="LoginServlet" method="post">
-            <fieldset>
-                <legend>Kirjaudu sisään</legend>
-                <h5>Käyttäjätunnus</h5><input type="text" name="kayttajanimi" required>
-                <h5>Salasana</h5><input type="password" name="salasana" required>
-                <br>
-                <input type="submit" value="Sisään">
-            </fieldset>
-        </form>
-    </div>
-</div>
+<%--<div id="lomake">--%>
+    <%--<form action="LoginServlet" method="post">--%>
+        <%--<fieldset>--%>
+            <%--<legend>Kirjaudu sisään</legend>--%>
+            <%--<h5>Käyttäjätunnus</h5><input type="text" name="kayttajanimi" required>--%>
+            <%--<h5>Salasana</h5><input type="password" name="salasana" required>--%>
+            <%--<br>--%>
+            <%--<input type="submit" value="Sisään">--%>
+        <%--</fieldset>--%>
+    <%--</form>--%>
+<%--</div>--%>
 </body>
 </html>
