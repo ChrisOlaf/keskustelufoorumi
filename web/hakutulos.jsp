@@ -14,6 +14,9 @@
 <nav>
     <a class="linkit" href="index.jsp">Takaisin etusivulle</a>
 </nav>
+<div id="banneri">
+    <h1>Hakutulokset</h1>
+</div>
     <div>
         <table border="1">
             <tr>
