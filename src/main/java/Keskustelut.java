@@ -36,6 +36,7 @@ public class Keskustelut extends HttpServlet {
         }
         istunto.setAttribute("aiheet",aiheet);
         istunto.setAttribute("viestit",viestit );
+        istunto.setAttribute("paluuosoite", paluuOsoite(aluenro));
         RequestDispatcher disp = request.getRequestDispatcher("Aihealue.jsp");
         disp.forward(request, response);
     }
@@ -45,4 +46,9 @@ public class Keskustelut extends HttpServlet {
         doPost(request, response);
     }
 
+    public String paluuOsoite (int value){
+        String v = String.valueOf(value);
+        String osoite = "Keskustelut?value=" + v;
+        return osoite;
+    }
 }

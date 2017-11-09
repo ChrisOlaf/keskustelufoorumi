@@ -62,7 +62,7 @@ public class UusiViestiServlet extends HttpServlet {
             return;
         }
         String paluu = (String) istunto.getAttribute("paluuosoite");
-        request.getRequestDispatcher(paluu).forward(request, response);
+        request.getRequestDispatcher(paluu).include(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

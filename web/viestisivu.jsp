@@ -53,8 +53,6 @@
     <tr>
         <td>
 
-            <%--${viesti0.viestiID}--%>
-            <%--${viesti0.alueID}--%>
             <form action="uusiviesti" method="post">
                 <fieldset>
                     <legend>Kirjoita uusi viesti:</legend>
