@@ -7,7 +7,17 @@
 
 <html>
 <head>
-    <title>Hakutulos</title>
+    <title>Hakutulokset</title>
+    <style>
+        td {
+            column-width: 350px;
+            text-align: center;
+        }
+        table {
+            width: 100%;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="style/foorumi.css">
 </head>
 <body>
     <div id="fiidi">
@@ -16,21 +26,16 @@
                 <th colspan="3"><h2>Hakutulokset</h2></th>
             </tr>
             <tr>
-                <th>Otsikko</th><th>Viesti</th><th>Kirjoittaja</th>
+                <th>Otsikko</th><th>Viesti</th><th>Kirjoitettu</th>
             </tr>
 
-            <c:forEach var="viesti" items="${sessionScope.viestiLista}">
-                <tr><td><a href="viesti?value=${viesti.id}" method="post"><c:out value="${viesti.otsikko}" /></a></td>
-                    <td><c:out value="${viesti.viesti}" /></td>
-                    <td><c:out value="${viesti.nimimerkki}" /></td>
+            <c:forEach var="viesti" items="${sessionScope.haku}">
+                <tr><td><a href="viesti?value=${viesti.viestiID}" value="viestiID" action="viesti" method="post">${viesti.otsikko}</a></td>
+                    <td>${viesti.viesti}"</td>
+                    <td>${viesti.ajankohta}"</td>
                 </tr>
             </c:forEach>
 
-            <%--<c:forEach var="row" items="${hakutulos.rows}">--%>
-                <%--<tr>--%>
-                    <%--<td><a href="viesti?value=${row.id}" method="post">${row.otsikko}</a></td><td>${row.viesti}</td><td>${row.nimimerkki}</td><td>${row.nimi}</td>--%>
-                <%--</tr>--%>
-            <%--</c:forEach>--%>
         </table>
     </div>
 
