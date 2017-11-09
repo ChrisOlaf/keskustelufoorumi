@@ -14,64 +14,77 @@
 <head>
     <title>Aihealue</title>
     <%--<style>--%>
-        <%--td {--%>
-            <%--column-width: 350px;--%>
-            <%--text-align: center;--%>
-        <%--}--%>
-        <%--table {--%>
-            <%--width: 100%;--%>
-        <%--}--%>
+    <%--td {--%>
+    <%--column-width: 350px;--%>
+    <%--text-align: center;--%>
+    <%--}--%>
+    <%--table {--%>
+    <%--width: 100%;--%>
+    <%--}--%>
     <%--</style>--%>
     <link rel="stylesheet" type="text/css" href="style/foorumi.css">
 </head>
 <body>
 <div id="banneri">
-<c:forEach var="aiheet" items="${sessionScope.otsikkoLista}">
-<h1 style="text-align: center"><c:out value="${aiheet.nimi}"/></h1>
-</c:forEach>
+    <c:forEach var="aiheet" items="${sessionScope.otsikkoLista}">
+        <h1 style="text-align: center"><c:out value="${aiheet.nimi}"/></h1>
+    </c:forEach>
 </div>
 <table border="2">
-    <tr><th>Otsikko</th><th>Nimimerkki</th><th>Kirjoitettu</th> </tr>
-<c:forEach var="viesti" items="${sessionScope.viestiLista}">
-    <tr><td><a href="viesti?value=${viesti.viestiID}"><c:out value="${viesti.otsikko}" /></a></td><td><c:out value="${viesti.nimimerkki}" /></td>
-        <td><c:out value="${viesti.ajankohta}"/></td></tr>
-</c:forEach>
+    <tr>
+        <th>Otsikko</th>
+        <th>Nimimerkki</th>
+        <th>Kirjoitettu</th>
+    </tr>
+    <c:forEach var="viesti" items="${sessionScope.viestiLista}">
+        <tr>
+            <td><a href="viesti?value=${viesti.viestiID}"><c:out value="${viesti.otsikko}"/></a></td>
+            <td><c:out value="${viesti.nimimerkki}"/></td>
+            <td><c:out value="${viesti.ajankohta}"/></td>
+        </tr>
+    </c:forEach>
 </table>
 <%--<c:forEach var="row" items="${rs.rows}">--%>
-    <%--<table border="3">--%>
-        <%--<tr><td>Otsikko ${row.otsikko}</td><td>Kirjoittaja ${row.nimimerkki}</td><td>Aika ${row.kirjoitettu}</td></tr>--%>
-    <%--</table>--%>
+<%--<table border="3">--%>
+<%--<tr><td>Otsikko ${row.otsikko}</td><td>Kirjoittaja ${row.nimimerkki}</td><td>Aika ${row.kirjoitettu}</td></tr>--%>
+<%--</table>--%>
 <%--</c:forEach>--%>
 <table>
-    <tr>
-        <td>
-
-            <form action="uusiviesti" method="post">
-                <fieldset>
-                    <legend>Kirjoita uusi viesti:</legend>
-                    <c:forEach var="viesti0" items="${sessionScope.otsikkoLista}">
-                        <input type="text" name="uusiotsikko" placeholder="Please enter your topic here"
-                               required="Please enter your topic here"/>
-                        <br/>
-                        <input type="text" name="uusiviesti" placeholder="Please enter your message here"
-                               required="Please enter your message here"/>
-                        <br/>
-                        Olen vain ihminen: <input type="checkbox" name="rasti"
-                                                  required="Please confirm that you are only a human"/>
-                        <input type="hidden" name="viestiid" value="0"/>
-                        <input type="hidden" name="alueid" value="${viesti0.alueid}"/>
-                    </c:forEach>
-                    <c:forEach var="hloid" items="${sessionScope.henkilotiedot}">
-                        <input type="hidden" name="hloid" value="${hloid.hloid}"/>
-                    </c:forEach>
+<tr>
+<td>
+<c:choose>
+    <c:when test="${sessionScope.knimi != null}">
+        <form action="uusiviesti" method="post">
+            <fieldset>
+                <legend>Kirjoita uusi viesti:</legend>
+                <c:forEach var="viesti0" items="${sessionScope.otsikkoLista}">
+                    <input type="text" name="uusiotsikko" placeholder="Please enter your topic here"
+                           required="Please enter your topic here"/>
                     <br/>
-                    <button type="submit" id="bottom">Lähetä</button>
-                </fieldset>
-            </form>
-        </td>
+                    <input type="text" name="uusiviesti" placeholder="Please enter your message here"
+                           required="Please enter your message here"/>
+                    <br/>
+                    Olen vain ihminen: <input type="checkbox" name="rasti"
+                                              required="Please confirm that you are only a human"/>
+                    <input type="hidden" name="viestiid" value="0"/>
+                    <input type="hidden" name="alueid" value="${viesti0.alueid}"/>
+                </c:forEach>
+                <c:forEach var="hloid" items="${sessionScope.henkilotiedot}">
+                    <input type="hidden" name="hloid" value="${hloid.hloid}"/>
+                </c:forEach>
+                <br/>
+                <button type="submit" id="bottom">Lähetä</button>
+            </fieldset>
+        </form>
+    </c:when>
+    <c:otherwise>
+        <h3><a href="index.jsp">Kirjaudu sisään</a> tai <a href="rekisteroityminen.jsp">rekisteröidy</a> kirjoittaaksesi
+            viestejä.</h3>
+    </c:otherwise>
+    </td>
     </tr>
-</table>
+    </table>
 
 
-</body>
-</html>
+    </body>
+    </html>

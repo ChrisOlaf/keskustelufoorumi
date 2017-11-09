@@ -53,7 +53,7 @@
     <tr>
         <td>
 <c:choose>
-    <c:when test="${sessionScope.knimi == true}">
+    <c:when test="${sessionScope.knimi != null}">
             <form action="uusiviesti" method="post">
                 <fieldset>
                     <legend>Kirjoita uusi viesti:</legend>
@@ -78,7 +78,8 @@
             </form>
     </c:when>
     <c:otherwise>
-        <h3><a href="index.jsp">Kirjaudu sisään</a> tai <a href="index.jsp">rekisteröidy</a> kirjoittaaksesi viestejä.</h3>
+        <h3><a href="index.jsp">Kirjaudu sisään</a> tai <a href="rekisteroityminen.jsp">rekisteröidy</a> kirjoittaaksesi
+            viestejä.</h3>
     </c:otherwise>
 </c:choose>
         </td>
