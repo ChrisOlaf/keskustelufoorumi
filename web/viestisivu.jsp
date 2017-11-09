@@ -42,6 +42,9 @@
             <td>
                 <form action="PoistaServlet" method="post">
                     <input type="hidden" name="viestiid" value="${viesti.viestiID}"/>
+                    <c:forEach var="viesti0" items="${sessionScope.viesti0}">
+                        <input type="hidden" name="viesti0" value="${viesti0.viestiID}"/>
+                    </c:forEach>
                     <button type="submit">Poista viesti</button>
                 </form>
             </td>
