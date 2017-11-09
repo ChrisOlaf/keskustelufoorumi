@@ -33,7 +33,7 @@
                 <td>Nimi: ${k.nimi}</td>
             </tr>
         <tr>
-            <td>Kuvaus: ${k.kuvaus}</td>
+            <td>Rooli: ${k.kuvaus}</td>
         </tr>
         <tr>
             <td>Minusta: ${k.kuvausteksti}</td>
