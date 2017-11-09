@@ -9,7 +9,7 @@
 <sql:query var="uusimmat" dataSource="jdbc/FoorumiDB">
     SELECT viesti.otsikko, henkilo.nimimerkki, alue.nimi, viesti.viesti, viesti.id
     FROM viesti JOIN henkilo ON viesti.kirjoittaja=henkilo.hloid
-    JOIN alue ON alue.alueid=viesti.alueid ORDER BY viesti.kirjoitettu DESC LIMIT 5
+    JOIN alue ON alue.alueid=viesti.alueid WHERE vastaus IS NULL ORDER BY viesti.kirjoitettu DESC LIMIT 5
 </sql:query>
 <html>
 <head>
