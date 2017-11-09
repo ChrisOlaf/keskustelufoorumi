@@ -3,6 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page session="true" %>
+
 <sql:query var="alue" dataSource="jdbc/FoorumiDB">
     SELECT nimi, alueid FROM alue
 </sql:query>
@@ -11,6 +12,7 @@
     FROM viesti JOIN henkilo ON viesti.kirjoittaja=henkilo.hloid
     JOIN alue ON alue.alueid=viesti.alueid WHERE vastaus IS NULL ORDER BY viesti.kirjoitettu DESC LIMIT 5
 </sql:query>
+
 <html>
 <head>
     <title>Foorumi</title>
@@ -45,7 +47,7 @@
     </form>
 </div>
 <div id="fiidi">
-    <table border="1">
+    <table>
         <tr>
             <th colspan="4"><h2>Uusimmat viestit</h2></th>
         </tr>
