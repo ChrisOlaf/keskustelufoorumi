@@ -10,6 +10,9 @@
     <link rel="stylesheet" type="text/css" href="style/foorumi.css">
 </head>
 <body>
+<nav>
+    <a class="linkit" href="index.jsp">Takaisin etusivulle</a>
+</nav>
 <div id="banneri">
 <h1> </h1>
 </div>
@@ -66,8 +69,8 @@
                     <input type="text" id="viotsikko" name="uusiotsikko" placeholder="Please enter your topic here"
                            required="Please enter your topic here"/>
                     <br/>
-                    <input type="textarea" id="vitekstikentta" name="uusiviesti" placeholder="Please enter your message here"
-                           required="Please enter your message here"/>
+                    <textarea id="vitekstikentta" name="uusiviesti" placeholder="Please enter your message here"
+                              required="Please enter your message here"></textarea>
                     <br/>
                     Olen vain ihminen: <input type="checkbox" name="rasti"
                                               required="Please confirm that you are only a human"/>
