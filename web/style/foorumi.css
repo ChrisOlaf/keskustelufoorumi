@@ -1,7 +1,6 @@
 
 body {
     font-family: "Myanmar Text", sans-serif;
-    /*background-image: url("https://static.pexels.com/photos/479453/pexels-photo-479453.jpeg");*/
     background-color: rgb(106,177,135);
     background-position: center;
     background-attachment: fixed;
@@ -63,12 +62,11 @@ div {
 }
 
 table {
-
+    width: 90%;
 }
 
 #lomake {
     width: 40%;
-    align-self: center;
 }
 
 #login {
@@ -80,6 +78,7 @@ table {
 th, td {
     padding: 10px;
     margin: 10px;
+    text-align: center;
 }
 
 

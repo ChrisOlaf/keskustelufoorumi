@@ -8,19 +8,13 @@
 <html>
 <head>
     <title>Hakutulokset</title>
-    <style>
-        td {
-            column-width: 350px;
-            text-align: center;
-        }
-        table {
-            width: 100%;
-        }
-    </style>
     <link rel="stylesheet" type="text/css" href="style/foorumi.css">
 </head>
 <body>
-    <div id="fiidi">
+<nav>
+    <a class="linkit" href="index.jsp">Takaisin etusivulle</a>
+</nav>
+    <div>
         <table border="1">
             <tr>
                 <th colspan="3"><h2>Hakutulokset</h2></th>
