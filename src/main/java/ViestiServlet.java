@@ -26,6 +26,7 @@ public class ViestiServlet extends HttpServlet {
         if (viestiID != null) {
             try (Connection con = ds.getConnection()) {
                 istunto.setAttribute("viestiLista", ViestiDBO.viestiListaus(con, viestiID));
+                istunto.setAttribute("viesti0", ViestiDBO.viestiOrigin(con, viestiID));
             } catch (SQLException e) {
                 e.printStackTrace();
                 istunto.setAttribute("virheviesti", e.getMessage());
@@ -36,10 +37,17 @@ public class ViestiServlet extends HttpServlet {
         else if (viestiID == null) {
             request.getRequestDispatcher("index.jsp").forward(request,response);
         }
+        istunto.setAttribute("paluuosoite", paluuOsoite(viestiID));
         request.getRequestDispatcher("viestisivu.jsp").forward(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doPost(request, response);
+    }
+
+    public String paluuOsoite (int value){
+        String v = String.valueOf(value);
+        String osoite = "viesti?value=" + v;
+        return osoite;
     }
 }

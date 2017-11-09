@@ -31,7 +31,7 @@
         </tr>
         <tr>
             <td>
-                Viesti ${viesti.viesti}
+                Viesti ${viesti.viesti} ${viesti.vastausID} ${viesti.alueID}
             </td>
         </tr>
         <tr>
@@ -52,20 +52,27 @@
 <table>
     <tr>
         <td>
-            <form action="UusiViestiServlet" method="post">
+<c:forEach var="viesti0" items="${sessionScope.viesti0}">
+            ${viesti0.viestiID}
+            ${viesti0.alueID}
+            <form action="uusiviesti" method="post">
                 <fieldset>
                     <legend>Kirjoita uusi viesti:</legend>
+                    <input type="text" name="uusiotsikko" placeholder="Please enter your topic here"
+                           required="Please enter your topic here"/>
+                    <br/>
                     <input type="text" name="uusiviesti" placeholder="Please enter your message here"
                            required="Please enter your message here"/>
                     <br/>
                     Olen vain ihminen: <input type="checkbox" name="rasti"
                                               required="Please confirm that you are only a human"/>
-                    <input type="hidden" name="viestiid" value="${viesti.viestiID}"/>
-                    <input type="hidden" name="alueid" value="${viesti.alueID}"/>
+                    <input type="hidden" name="viestiid" value="${viesti0.viestiID}"/>
+                    <input type="hidden" name="alueid" value="${viesti0.alueID}"/>
                     <br/>
                     <button type="submit" id="bottom">Lähetä</button>
                 </fieldset>
             </form>
+</c:forEach>
         </td>
     </tr>
 </table>
