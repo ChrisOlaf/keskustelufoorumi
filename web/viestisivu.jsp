@@ -13,11 +13,12 @@
 <h3>Tällä sivulla on yksittäinen viesti + vastaukset</h3>
 
 <c:forEach var="viesti" items="${sessionScope.viestiLista}">
+    <div>
     <table>
         <tr>
-            <td>
+            <th>
                 <h3> ${viesti.otsikko} </h3>
-            </td>
+            </th>
         </tr>
         <tr>
             <td>
@@ -46,19 +47,21 @@
             </td>
         </tr>
     </table>
+    </div>
 </c:forEach>
 <table>
     <tr>
         <td>
-
+<c:choose>
+    <c:when test="${sessionScope.knimi == true}">
             <form action="uusiviesti" method="post">
                 <fieldset>
                     <legend>Kirjoita uusi viesti:</legend>
                     <c:forEach var="viesti0" items="${sessionScope.viesti0}">
-                    <input type="text" name="uusiotsikko" placeholder="Please enter your topic here"
+                    <input type="text" id="viotsikko" name="uusiotsikko" placeholder="Please enter your topic here"
                            required="Please enter your topic here"/>
                     <br/>
-                    <input type="text" name="uusiviesti" placeholder="Please enter your message here"
+                    <input type="text" id="vitekstikentta" name="uusiviesti" placeholder="Please enter your message here"
                            required="Please enter your message here"/>
                     <br/>
                     Olen vain ihminen: <input type="checkbox" name="rasti"
@@ -73,6 +76,11 @@
                     <button type="submit" id="bottom">Lähetä</button>
                 </fieldset>
             </form>
+    </c:when>
+    <c:otherwise>
+        <h3><a href="index.jsp">Kirjaudu sisään</a> tai <a href="index.jsp">rekisteröidy</a> kirjoittaaksesi viestejä.</h3>
+    </c:otherwise>
+</c:choose>
         </td>
     </tr>
 </table>
