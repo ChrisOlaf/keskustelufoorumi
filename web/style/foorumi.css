@@ -35,6 +35,17 @@ div {
     margin: 2%;
 }
 
+#vitekstikentta {
+    border: 3px solid #cccccc;
+    width: 400px;
+    height: 150px
+}
+
+#viotsikko {
+    border: 3px solid #cccccc;
+    width: 400px;
+}
+
 #banneri {
     position: relative;
     height: 100px;
