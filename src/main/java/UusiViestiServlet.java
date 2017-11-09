@@ -8,6 +8,8 @@ import java.io.IOException;
 @WebServlet(name = "UusiViestiServlet")
 public class UusiViestiServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String viesti = request.getParameter("uusiviesti");
+        String kirjoittaja = request.getParameter("knimi");
 int alueID = Integer.parseInt(request.getParameter("alueid"));
 Integer viestiID = Integer.parseInt(request.getParameter("viestiid"));
     }

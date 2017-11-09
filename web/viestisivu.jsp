@@ -34,6 +34,19 @@
                 Viesti ${viesti.viesti}
             </td>
         </tr>
+        <tr>
+            <td>
+                <form action="#bottom" method="get">
+                    <button type="submit">Vastaa ketjuun</button>
+                </form>
+            </td>
+            <td>
+                <form action="PoistaServlet" method="post">
+                    <input type="hidden" name="viestiid" value="${viesti.viestiID}"/>
+                    <button type="submit">Poista viesti</button>
+                </form>
+            </td>
+        </tr>
     </table>
 </c:forEach>
 <table>
@@ -42,13 +55,15 @@
             <form action="UusiViestiServlet" method="post">
                 <fieldset>
                     <legend>Kirjoita uusi viesti:</legend>
-                    <input type="text" name="uusiviesti" placeholder="Please enter your message here" required="Please enter your message here"/>
+                    <input type="text" name="uusiviesti" placeholder="Please enter your message here"
+                           required="Please enter your message here"/>
                     <br/>
-                    Olen vain ihminen: <input type="checkbox" name="rasti" required="Please confirm that you are only a human"/>
-                    <input type="hidden" name="viestiid" value="${viesti.viestiid}"/>
-                    <input type="hidden" name="alueid" value="${viesti.alueid}"/>
+                    Olen vain ihminen: <input type="checkbox" name="rasti"
+                                              required="Please confirm that you are only a human"/>
+                    <input type="hidden" name="viestiid" value="${viesti.viestiID}"/>
+                    <input type="hidden" name="alueid" value="${viesti.alueID}"/>
                     <br/>
-                    <button type="submit">Lähetä</button>
+                    <button type="submit" id="bottom">Lähetä</button>
                 </fieldset>
             </form>
         </td>
