@@ -21,6 +21,7 @@
     <form id="login" action="LoginServlet" method="post">
         <p>Käyttäjätunnus<input type="text" name="kayttajanimi" required> Salasana<input type="password" name="salasana" required> <input type="submit" value="Sisään"></p>
     </form>
+    <a class="linkit" href="rekisteroityminen.jsp">Rekisteröidy käyttäjäksi</a>         <a class="linkit" href="LogoutServlet">Kirjaudu ulos</a>          <a class="linkit" href="ProfiiliServlet">Profiili</a>
 </nav>
 <div id="banneri">
     <h1>FOORUMI</h1>
@@ -28,9 +29,6 @@
 </div>
 <br>
 <br>
-<%--<a href="rekisteroityminen.jsp">Rekisteröidy käyttäjäksi</a>--%>
-<%--<a href="LogoutServlet">Kirjaudu ulos</a>--%>
-<%--<a href="ProfiiliServlet">Profiili</a>--%>
 <div id="aihealueet">
     <h3>Keskustelualueet</h3>
     <c:forEach var="row" items="${alue.rows}">
