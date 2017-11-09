@@ -7,6 +7,7 @@ public class Viesti implements Serializable{
     private String nimimerkki;
     private String ajankohta;
     private String viesti;
+    private int hloID;
     private int viestiID;
     private int vastausID;
     private int alueID;
@@ -14,11 +15,12 @@ public class Viesti implements Serializable{
     public Viesti() {
     }
 
-    public Viesti(String otsikko, String nimimerkki, String ajankohta, String viesti, int viestiID, int vastausID, int alueID) {
+    public Viesti(String otsikko, String nimimerkki, String ajankohta, String viesti, int hloID, int viestiID, int vastausID, int alueID) {
         this.otsikko = otsikko;
         this.nimimerkki = nimimerkki;
         this.ajankohta = ajankohta;
         this.viesti = viesti;
+        this.hloID = hloID;
         this.viestiID = viestiID;
         this.vastausID = vastausID;
         this.alueID = alueID;
@@ -54,6 +56,14 @@ public class Viesti implements Serializable{
 
     public void setViesti(String viesti) {
         this.viesti = viesti;
+    }
+
+    public int getHloID() {
+        return hloID;
+    }
+
+    public void setHloID(int hloID) {
+        this.hloID = hloID;
     }
 
     public int getViestiID() {
