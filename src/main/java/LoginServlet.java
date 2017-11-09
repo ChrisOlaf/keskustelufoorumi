@@ -35,6 +35,7 @@ public class LoginServlet extends HttpServlet {
             HttpSession session = request.getSession();
             session.setAttribute("knimi", knimi);
             session.setAttribute("kayttajanviestit", kayttajanViestit(knimi));
+            session.setAttribute("henkilotiedot", henkiloTiedot(knimi));
             request.getRequestDispatcher("index.jsp").include(request, response);
 
         }else{
@@ -93,5 +94,30 @@ public class LoginServlet extends HttpServlet {
             e.printStackTrace();
         }
         return viestit;
+    }
+
+    public List<Henkilo> henkiloTiedot(String knimi){
+        List<Henkilo> tiedot = new ArrayList<>();
+
+        try (Connection con = ds.getConnection()) {
+            String sql = ("SELECT * FROM henkilo " +
+                    "WHERE henkilo.nimimerkki = ?");
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setString(1, knimi);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                Henkilo h = new Henkilo();
+                h.setHloid(rs.getInt("hloid"));
+                h.setNimi(rs.getString("nimi"));
+                h.setNimimerkki(rs.getString("nimimerkki"));
+                h.setKuvaus(rs.getString("kuvaus"));
+                h.setKuvausteksti(rs.getString("kuvausteksti"));
+                tiedot.add(h);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return tiedot;
+
     }
 }

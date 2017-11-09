@@ -23,11 +23,25 @@
     <a href="LogoutServlet">Kirjaudu ulos</a>
 </div>
 
-<div>
-<h2> </h2>
-</div>
-    <div id="fiidi">
-        <table border="1">
+<div id="fiidi">
+    <table border="1">
+    <tr>
+        <th colspan="4"><h2>Omat tiedot</h2></th>
+    </tr>
+        <c:forEach var="k" items="${sessionScope.henkilotiedot}">
+            <tr>
+                <td>Nimi: ${k.nimi}</td>
+            </tr>
+        <tr>
+            <td>Kuvaus: ${k.kuvaus}</td>
+        </tr>
+        <tr>
+            <td>Minusta: ${k.kuvausteksti}</td>
+        </tr>
+        </c:forEach>
+    </table>
+
+    <table border="1">
             <tr>
                 <th colspan="4"><h2>Aloittamasi keskustelut</h2></th>
             </tr>

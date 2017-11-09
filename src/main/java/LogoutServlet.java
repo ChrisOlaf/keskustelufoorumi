@@ -21,18 +21,14 @@ public class LogoutServlet extends HttpServlet {
 
         if(session.getAttribute("knimi")!=null){
             String knimi = (String)session.getAttribute("knimi");
-            out.print("Olet kirjautunt ulos, " + knimi + "!");
             session.invalidate();
+            out.print("Olet kirjautunt ulos, " + knimi + "!");
             request.getRequestDispatcher("index.jsp").include(request, response);
         }
         else{
             out.print("Et ole edes kirjautunut sisään vielä!");
             request.getRequestDispatcher("index.jsp").include(request, response);
         }
-
-
-
-
 
         out.close();
     }
