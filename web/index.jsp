@@ -34,6 +34,7 @@
     <c:forEach var="row" items="${alue.rows}">
         <a href="Keskustelut?value=${row.alueid}" value="nro" action="Keskustelut" method="post">${row.nimi}</a><br><br>
     </c:forEach>
+    <br>
     <form action="HakuServlet" method="post">
         <fieldset>
             <legend>Etsi kiinnostavia keskusteluja</legend>

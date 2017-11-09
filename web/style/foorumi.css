@@ -68,6 +68,7 @@ table {
 
 #lomake {
     width: 40%;
+    align-self: center;
 }
 
 #login {
