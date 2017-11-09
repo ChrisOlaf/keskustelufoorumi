@@ -16,17 +16,15 @@
     <table>
         <tr>
             <td>
-                Otsikko ${viesti.otsikko}
+                <h3> ${viesti.otsikko} </h3>
             </td>
         </tr>
         <tr>
             <td>
-                Kirjoittaja ${viesti.nimimerkki}
+                <h6> ${viesti.nimimerkki} </h6>
             </td>
-        </tr>
-        <tr>
             <td>
-                Aika ${viesti.ajankohta}
+                <h6> ${viesti.ajankohta} </h6>
             </td>
         </tr>
         <tr>
