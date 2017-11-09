@@ -61,7 +61,7 @@
                     <input type="text" id="viotsikko" name="uusiotsikko" placeholder="Please enter your topic here"
                            required="Please enter your topic here"/>
                     <br/>
-                    <input type="text" id="vitekstikentta" name="uusiviesti" placeholder="Please enter your message here"
+                    <input type="textarea" id="vitekstikentta" name="uusiviesti" placeholder="Please enter your message here"
                            required="Please enter your message here"/>
                     <br/>
                     Olen vain ihminen: <input type="checkbox" name="rasti"
