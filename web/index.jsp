@@ -61,16 +61,5 @@
         </c:forEach>
     </table>
 </div>
-<%--<div id="lomake">--%>
-    <%--<form action="LoginServlet" method="post">--%>
-        <%--<fieldset>--%>
-            <%--<legend>Kirjaudu sisään</legend>--%>
-            <%--<h5>Käyttäjätunnus</h5><input type="text" name="kayttajanimi" required>--%>
-            <%--<h5>Salasana</h5><input type="password" name="salasana" required>--%>
-            <%--<br>--%>
-            <%--<input type="submit" value="Sisään">--%>
-        <%--</fieldset>--%>
-    <%--</form>--%>
-<%--</div>--%>
 </body>
 </html>
