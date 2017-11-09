@@ -23,7 +23,7 @@ public class PoistaServlet extends HttpServlet {
         String rooli = request.getParameter("rooli");
 
 
-        if (hloid != null) {
+        if (hloid == hloid) {
             try (Connection con = ds.getConnection()) {
                 String sql = "DELETE FROM viesti where id = ?";
                 PreparedStatement ps = con.prepareStatement(sql);
