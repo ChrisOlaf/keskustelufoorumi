@@ -14,36 +14,36 @@
     <a class="linkit" href="index.jsp">Takaisin etusivulle</a>
 </nav>
 <div id="banneri">
-<h1> </h1>
+<h1>VIESTIKETJU</h1>
 </div>
 <c:forEach var="viesti" items="${sessionScope.viestiLista}">
     <div>
     <table>
         <tr>
-            <th>
+            <td colspan="4" class="ketjuotsikko">
                 <h3> ${viesti.otsikko} </h3>
-            </th>
-        </tr>
-        <tr>
-            <td>
-                <h6> ${viesti.nimimerkki} </h6>
-            </td>
-            <td>
-                <h6> ${viesti.ajankohta} </h6>
             </td>
         </tr>
         <tr>
-            <td>
+            <td class="kirjoittaja">
+                Kirjoittaja: ${viesti.nimimerkki}
+            </td>
+            <td colspan="2" class="filler"> </td>
+            <td class="date">
+                ${viesti.ajankohta}
+            </td>
+        </tr>
+        <tr class="ketjuboxi">
+            <td colspan="4" class="ketjuviesti">
                 ${viesti.viesti}
             </td>
         </tr>
         <tr>
-            <td>
-                <form action="#bottom" method="get">
-                    <button type="submit">Vastaa ketjuun</button>
-                </form>
+            <td colspan="2" class="filler"> </td>
+            <td class="button1">
+                <a href="#bottom"><button>Vastaa viestiin</button></a>
             </td>
-            <td>
+            <td class="button2">
                 <form action="PoistaServlet" method="post">
                     <input type="hidden" name="viestiid" value="${viesti.viestiID}"/>
                     <c:forEach var="viesti0" items="${sessionScope.viesti0}">
@@ -72,8 +72,8 @@
                     <textarea id="vitekstikentta" name="uusiviesti" placeholder="Please enter your message here"
                               required="Please enter your message here"></textarea>
                     <br/>
-                    Olen vain ihminen: <input type="checkbox" name="rasti"
-                                              required="Please confirm that you are only a human"/>
+                    <label>Olen vain ihminen: <input type="checkbox" name="rasti"
+                                                     required="Please confirm that you are only a human"/></label>
                     <input type="hidden" name="viestiid" value="${viesti0.viestiID}"/>
                     <input type="hidden" name="alueid" value="${viesti0.alueID}"/>
                     </c:forEach>
@@ -86,8 +86,8 @@
             </form>
     </c:when>
     <c:otherwise>
-        <h3><a href="index.jsp">Kirjaudu sisään</a> tai <a href="rekisteroityminen.jsp">rekisteröidy</a> kirjoittaaksesi
-            viestejä.</h3>
+        <a href="index.jsp">Kirjaudu sisään</a> tai <a href="rekisteroityminen.jsp">rekisteröidy</a> kirjoittaaksesi
+            viestejä.<a id="bottom">
     </c:otherwise>
 </c:choose>
         </td>

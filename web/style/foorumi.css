@@ -20,8 +20,7 @@ a:link, a:visited {
 }
 a:hover {
     text-decoration: none;
-    font-weight: bold;
-    color: black;
+    color: darkslateblue;
 }
 
 div {
@@ -35,6 +34,10 @@ div {
     margin: 2%;
 }
 
+textarea {
+    resize: none;
+}
+
 #vitekstikentta {
     border: 3px solid #cccccc;
     width: 400px;
@@ -44,6 +47,10 @@ div {
 #viotsikko {
     border: 3px solid #cccccc;
     width: 400px;
+}
+
+#kuvausteksti {
+
 }
 
 #banneri {
@@ -94,4 +101,75 @@ th, td {
     border: 1px solid black;
 }
 
+td.filler {
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+}
+
+td.kirjoittaja {
+    width: 25%;
+    padding: 0px;
+    padding-left: 20px;
+    padding-top: 5px;
+    margin: 0px;
+    text-align: left;
+    border: 0px;
+    font-size: 70%;
+    font-weight: 600;
+}
+
+td.date {
+    width: 25%;
+    padding: 0px;
+    padding-right: 20px;
+    padding-top: 5px;
+    margin: 0px;
+    text-align: right;
+    border: 0px;
+    font-size: 70%;
+    font-weight: bold;
+}
+
+td.button1 {
+    width: 25%;
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+    text-align: right;
+}
+
+td.button2 {
+    width: 25%;
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+    text-align: left;
+}
+
+td.ketjuotsikko {
+    padding: 0px;
+    padding-left: 20px;
+    padding-top: 5px;
+    margin: 0px;
+    border: 0px;
+    text-align: left;
+    border-bottom: 1px solid black;
+}
+
+tr.ketjuboxi {
+    min-height: 300px;
+}
+
+td.ketjuviesti {
+    min-height: 300px;
+    padding: 0px;
+    padding-left: 30px;
+    padding-top: 10px;
+    margin: 0px;
+    border: 0px;
+    text-align: left;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+}
 
