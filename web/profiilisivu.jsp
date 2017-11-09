@@ -43,7 +43,7 @@
 <div>
     <table border="1">
             <tr>
-                <th colspan="4"><h2>Aloittamasi keskustelut</h2></th>
+                <th colspan="4"><h2>Omat viestit</h2></th>
             </tr>
             <tr>
                 <th>Otsikko</th><th>Viesti</th><th>Kirjoitettu</th>
