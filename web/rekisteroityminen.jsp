@@ -12,6 +12,9 @@
 </head>
 <link rel="stylesheet" type="text/css" href="style/foorumi.css">
 <body>
+<nav>
+    <a href="index.jsp">Takaisin etusivulle</a>
+</nav>
 <div id="banneri">
 <h1>Tervetuloa Foorumin käyttäjäksi</h1>
 </div>
@@ -19,11 +22,11 @@
     <form action="rekisteroityminen" method="post">
         <fieldset>
             <legend>Rekisteröidy käyttäjäksi</legend>
-            <h5>Käyttäjätunnus</h5><input type="text" name="nimimerkki" required>
-            <h5>Nimi</h5><input type="text" name="nimi" required>
-            <h5>Salasana</h5><input type="password" name="salasana" required>
-            <h5>Rooli, esim. velho, virtuoosi, MESTARI</h5><input type="text" name="kuvaus" required>
-            <h5>Minusta</h5><input type="text" name="kuvausteksti" required>
+            <p>Käyttäjätunnus</p><input type="text" name="nimimerkki" required>
+            <p>Nimi</p><input type="text" name="nimi" required>
+            <p>Salasana</p><input type="password" name="salasana" required>
+            <p>Rooli, esim. velho, virtuoosi, MESTARI</p><input type="text" name="kuvaus" required>
+            <p>Minusta</p><textarea name="kuvausteksti" id="kuvausteksti" cols="30" rows="10" required></textarea>
             <br>
             <input type="submit" value="Rekisteröidy">
         </fieldset>

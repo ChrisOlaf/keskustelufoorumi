@@ -10,6 +10,10 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page session="true" %>
 <html>
+<nav>
+    <a href="index.jsp">Takaisin etusivulle</a>
+    <a href="LogoutServlet">Kirjaudu ulos</a>
+</nav>
 <head>
     <title>Profiilisivu</title>
     <link rel="stylesheet" type="text/css" href="style/foorumi.css">
@@ -18,12 +22,8 @@
 <div id="banneri">
 <h1><%= session.getAttribute("knimi")%></h1>
 </div>
-<div>
-    <a href="index.jsp">Etusivu</a>
-    <a href="LogoutServlet">Kirjaudu ulos</a>
-</div>
 
-<div id="fiidi">
+<div>
     <table border="1">
     <tr>
         <th colspan="4"><h2>Omat tiedot</h2></th>
@@ -40,7 +40,8 @@
         </tr>
         </c:forEach>
     </table>
-
+</div>
+<div>
     <table border="1">
             <tr>
                 <th colspan="4"><h2>Aloittamasi keskustelut</h2></th>
