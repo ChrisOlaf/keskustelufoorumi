@@ -19,9 +19,9 @@ public class Keskustelut extends HttpServlet {
     DataSource ds;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        int aluenro = Integer.parseInt(request.getParameter("value"));
-        response.setContentType("text/html");
         HttpSession istunto = request.getSession(true);
+        response.setContentType("text/html");
+        int aluenro = Integer.parseInt(request.getParameter("value"));
         Viesti viestit = new Viesti();
         Aiheet aiheet = new Aiheet();
         try (Connection con = ds.getConnection()) {
