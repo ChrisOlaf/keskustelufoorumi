@@ -30,7 +30,7 @@
         </tr>
         <tr>
             <td>
-                Viesti ${viesti.viesti} ${viesti.vastausID} ${viesti.alueID}
+                ${viesti.viesti}
             </td>
         </tr>
         <tr>
