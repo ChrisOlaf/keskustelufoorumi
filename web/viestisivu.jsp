@@ -10,8 +10,9 @@
     <link rel="stylesheet" type="text/css" href="style/foorumi.css">
 </head>
 <body>
-<h3>Tällä sivulla on yksittäinen viesti + vastaukset</h3>
-
+<div id="banneri">
+<h1> </h1>
+</div>
 <c:forEach var="viesti" items="${sessionScope.viestiLista}">
     <div>
     <table>
@@ -52,6 +53,7 @@
     </table>
     </div>
 </c:forEach>
+<div>
 <table>
     <tr>
         <td>
@@ -88,6 +90,7 @@
         </td>
     </tr>
 </table>
+</div>
 
 </body>
 </html>

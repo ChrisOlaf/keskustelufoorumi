@@ -30,6 +30,7 @@
         <h1 style="text-align: center"><c:out value="${aiheet.nimi}"/></h1>
     </c:forEach>
 </div>
+<div>
 <table border="2">
     <tr>
         <th>Otsikko</th>
@@ -44,11 +45,13 @@
         </tr>
     </c:forEach>
 </table>
+</div>
 <%--<c:forEach var="row" items="${rs.rows}">--%>
 <%--<table border="3">--%>
 <%--<tr><td>Otsikko ${row.otsikko}</td><td>Kirjoittaja ${row.nimimerkki}</td><td>Aika ${row.kirjoitettu}</td></tr>--%>
 <%--</table>--%>
 <%--</c:forEach>--%>
+<div>
 <table>
     <tr>
         <td>
@@ -86,7 +89,7 @@
         </td>
     </tr>
 </table>
-
+</div>
 
 </body>
 </html>
