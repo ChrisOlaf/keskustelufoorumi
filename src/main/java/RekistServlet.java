@@ -32,8 +32,8 @@ public class RekistServlet extends HttpServlet {
         String salasana = request.getParameter("salasana");
 
         if(session.getAttribute("knimi")!= null){
-            out.print("Olet jo kirjautunut sisään!");
-            request.getRequestDispatcher("rekisteroityminen.jsp").include(request, response);
+            out.print("Olet jo sisäänkirjautunut rekisteröityneenä käyttäjänä!");
+            request.getRequestDispatcher("index.jsp").include(request, response);
         } else{
             rekisteroidy(nimimerkki, nimi, kuvaus, kuvausteksti);
             asetaSalasana(salasana);
