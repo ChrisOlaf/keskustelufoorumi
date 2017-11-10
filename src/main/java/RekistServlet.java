@@ -20,6 +20,7 @@ public class RekistServlet extends HttpServlet {
     @Resource(name = "jdbc/FoorumiDB")
     DataSource ds;
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
 
