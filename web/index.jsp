@@ -20,10 +20,17 @@
 </head>
 <body>
 <nav>
-    <form id="login" action="LoginServlet" method="post">
-        <p>Käyttäjätunnus<input type="text" name="kayttajanimi" required> Salasana<input type="password" name="salasana" required> <input type="submit" value="Sisään"></p>
-    </form>
-    <a class="linkit" href="rekisteroityminen.jsp">Rekisteröidy käyttäjäksi</a>  <a class="linkit" href="LogoutServlet">Kirjaudu ulos</a>  <a class="linkit" href="ProfiiliServlet">Profiili</a>
+    <c:choose>
+        <c:when test="${sessionScope.knimi != null}">
+            <a class="linkit" href="LogoutServlet">Kirjaudu ulos</a>  <a class="linkit" href="ProfiiliServlet">Profiili</a>
+        </c:when>
+        <c:otherwise>
+            <form id="login" action="LoginServlet" method="post">
+                <p>Käyttäjätunnus<input type="text" name="kayttajanimi" required> Salasana<input type="password" name="salasana" required> <input type="submit" value="Sisään"></p>
+            </form>
+            <a class="linkit" href="rekisteroityminen.jsp">Rekisteröidy käyttäjäksi</a>
+        </c:otherwise>
+    </c:choose>
 </nav>
 <div id="banneri">
     <h1>FOORUMI</h1>
